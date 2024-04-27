@@ -17,6 +17,12 @@ COPY . .
 # Instalar las dependencias del proyecto
 RUN npm install
 
+# Instalar cors
+RUN npm install cors
+
+# Actualiza los repositorios e instala net-tools
+RUN apt-get update && apt-get install -y net-tools curl
+
 # Exponer el puerto 4200 para acceder al servidor de desarrollo de Angular
 EXPOSE ${FRONT_ANGULAR_DOCKER_PORT}
 

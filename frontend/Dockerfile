@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Actualiza los repositorios e instala net-tools
-RUN apk update && apk add --no-cache net-tools curl
+RUN apt-get update && apt-get install -y net-tools curl
 
 # Copiar el contenido del frontend
 COPY . /usr/share/nginx/html
