@@ -23,14 +23,14 @@ RUN apt-get update && apt-get install -y net-tools curl
 COPY . .
 
 # Definir la variable de entorno con la dirección IP privada
-ENV BACKEND_IP=10.1.91.179
+ENV BACKEND_IP=localhost
 
 # Definir la variable de entorno PORT
 ENV BACKEND_LOCAL_PORT=3000
 ENV BACKEND_DOCKER_PORT=3000
 
 # Puerto que escucha el servidor
-EXPOSE ${BACKEND_DOCKER_PORT}
+EXPOSE 3000
 
 # Puerto que escucha el servidor
 # EXPOSE 3000

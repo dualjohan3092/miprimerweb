@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: ./front-angular
+    ports:
+      - "80:4200"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    depends_on:
+      - backend
